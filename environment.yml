@@ -1,0 +1,16 @@
+name: rrkm-me-pipeline
+channels:
+  - conda-forge
+  - psi4
+dependencies:
+  - python=3.11
+  - psi4
+  - numpy
+  - matplotlib
+  - pandas
+  - jupyterlab
+  - scipy
+# MESS is not conda-installable as of this writing; build from source per
+# https://github.com/PACChem/MESS and add the binary to PATH.
+# Document the exact build steps in notes/ once completed, since MESS build
+# instructions vary by system and are worth capturing for reproducibility.
