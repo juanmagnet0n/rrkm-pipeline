@@ -50,9 +50,16 @@ WHY CH3 + O (not a simpler system)
 
 CH3 + H -> CH4 would be simpler (single well, no branching) but would not
 demonstrate the multi-channel character that is the actual scientific
-content of combustion kinetics work. CH3 + O has several competing product
-channels (CH2O + H, HCO + H2, CO + H2 + H, among others), giving genuine
-branching ratio predictions to validate, which is much closer to the kind of
+content of combustion kinetics work. CH3 + O(3P) proceeds through a
+chemically activated CH3O/CH2OH intermediate and branches into two
+experimentally characterized product channels:
+
+    CH3 + O(3P) -> HCHO + H        (55 +/- 5%)
+    CH3 + O(3P) -> CO + H2 + H     (45 +/- 5%)
+
+(branching ratios from the experimental study "Mechanism and rate of the
+reaction CH3 + O -- revisited", see References). This gives genuine
+branching ratio predictions to validate against, much closer to the kind of
 system in the dissertation work (propargyl + O, allyl + O2) than a
 single-channel toy case, without requiring multireference treatment the way
 propargyl + O's excited-state recombination pathway does. This system is
@@ -60,6 +67,25 @@ single-reference-dominated at its stationary points, so CCSD(T) is an
 appropriate and defensible level of theory here; that assumption should be
 checked with a T1 diagnostic early and stated explicitly rather than
 assumed.
+
+A directly relevant theoretical precedent exists: Xu, Z. F.; Raghunath, P.;
+Lin, M. C. Ab Initio Chemical Kinetics for the CH3 + O(3P) Reaction and
+Related Isomerization-Decomposition of CH3O and CH2OH Radicals. J. Phys.
+Chem. A 2015, 119 (28), 7404-7417. This paper characterizes the same
+CH3O/CH2OH intermediate chemistry at a comparable level of theory and is the
+primary methodological and validation reference for this pipeline.
+
+SPECIES ON THE SURFACE (planned Phase 1 targets)
+
+- CH3 (methyl radical, reactant, doublet)
+- O (atomic oxygen, reactant, triplet ground state, 3P)
+- CH3O (methoxy radical, chemically activated intermediate, doublet)
+- CH2OH (methoxy isomer, possible intermediate, doublet)
+- HCHO (formaldehyde, product channel 1, singlet)
+- H (atomic hydrogen, product, doublet)
+- HCO (formyl radical, likely intermediate en route to channel 2, doublet)
+- H2 (product channel 2, singlet)
+- CO (product channel 2, singlet)
 
 TOOLCHAIN (planned, open-source only)
 
@@ -171,3 +197,18 @@ OPEN DECISIONS TO REVISIT
   be feasible, but this should be confirmed once Phase 1 begins.
 - Repository name and whether it lives under the same GitHub account as QC2
   (github.com/juanmagnet0n) with clear cross-linking between the two READMEs.
+- Whether to attempt reproducing the Xu/Raghunath/Lin (2015) level of theory
+  directly for closer comparability, or use a more modest level of theory
+  and discuss the resulting discrepancy honestly as part of the validation
+  story.
+
+REFERENCES
+
+- Preuss, R.; Bogan, D. J. Mechanism and rate of the reaction CH3 + O --
+  revisited. (Experimental branching ratio: HCHO + H 55 +/- 5%, CO + H2 + H
+  45 +/- 5%. Full citation to be confirmed and completed before use in
+  notes/ -- author details pulled from a PubMed abstract, not yet verified
+  against the full article.)
+- Xu, Z. F.; Raghunath, P.; Lin, M. C. Ab Initio Chemical Kinetics for the
+  CH3 + O(3P) Reaction and Related Isomerization-Decomposition of CH3O and
+  CH2OH Radicals. J. Phys. Chem. A 2015, 119 (28), 7404-7417.

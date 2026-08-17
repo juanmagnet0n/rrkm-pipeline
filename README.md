@@ -12,9 +12,12 @@ scope and phase breakdown.
 This repository builds, step by step, the full workflow used in theoretical
 combustion kinetics: geometry optimization and frequency calculations,
 CCSD(T) single-point energies, and RRKM/master-equation kinetics, applied to
-a real (if deliberately small) benchmark reaction: **CH3 + O**, which
-proceeds through several competing product channels (CH2O + H, HCO + H2, CO
-+ H2 + H, among others).
+a real (if deliberately small) benchmark reaction: **CH3 + O(3P)**, which
+proceeds through a chemically activated CH3O/CH2OH intermediate and branches
+into two experimentally characterized product channels, HCHO + H (55 ± 5%)
+and CO + H2 + H (45 ± 5%). HCO is treated as a proposed intermediate on the
+path to the CO + H2 + H channel, not as a separately validated product with
+its own literature branching ratio.
 
 Every stage of the pipeline is version-controlled and documented in the
 `notes/` directory, including the tools' assumptions and where they are
@@ -22,11 +25,16 @@ expected to break down.
 
 ## Why this system
 
-CH3 + O is well-characterized in the literature, single-reference-dominated
-at its stationary points (confirmed via T1 diagnostic before any CCSD(T)
-work, see `notes/multireference_diagnostic_check.md`), and has genuine
-branching ratios to predict and validate, unlike a single-channel toy
-system. It is a deliberately modest but real scientific benchmark.
+CH3 + O(3P) proceeds through a chemically activated CH3O/CH2OH intermediate
+and branches into two experimentally characterized product channels: HCHO +
+H (55 ± 5%) and CO + H2 + H (45 ± 5%). It is well-characterized in the
+literature, single-reference-dominated at its stationary points (confirmed
+via T1 diagnostic before any CCSD(T) work, see
+`notes/multireference_diagnostic_check.md`), and has genuine branching
+ratios to predict and validate, unlike a single-channel toy system. A
+directly relevant theoretical precedent, Xu, Raghunath, and Lin (2015),
+characterizes this same intermediate chemistry and serves as the primary
+methodological and validation reference for this pipeline.
 
 ## Toolchain
 
@@ -60,10 +68,13 @@ RRKM-ME-pipeline/
 
 ## Validation
 
-Results are checked against literature-reported rate constants for CH3 + O
-and, where available, Active Thermochemical Tables (ATcT) reference
-thermochemistry. Citations for all reference values used are given in
-`notes/`, not assumed from memory.
+Results are checked against literature-reported rate constants and branching
+ratios for CH3 + O (primary references: an experimental branching-ratio
+study reporting HCHO + H at 55 ± 5% and CO + H2 + H at 45 ± 5%, and Xu,
+Raghunath, and Lin's 2015 ab initio kinetics study of the same system, *J.
+Phys. Chem. A* 2015, 119, 7404–7417) and, where available, Active
+Thermochemical Tables (ATcT) reference thermochemistry. Full citations are
+maintained in `notes/`, not assumed from memory.
 
 ## What this project is not
 

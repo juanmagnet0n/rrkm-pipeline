@@ -6,11 +6,10 @@ Status: planned, not yet run.
 
 (To be filled in once T1 diagnostics are computed for all CH3 + O
 stationary points.) Expectation, stated in advance so it can be checked
-against rather than assumed after the fact: CH3 + O and its product
-channels (CH2O + H, HCO + H2, CO + H2 + H) are expected to be
-single-reference-dominated, making CCSD(T) an appropriate level of theory.
-This should be confirmed, not assumed, before Phase 3 (CCSD(T) single-point
-energies) begins.
+against rather than assumed after the fact: CH3, O, CH3O, CH2OH, HCHO, H,
+HCO, H2, and CO are expected to be single-reference-dominated, making
+CCSD(T) an appropriate level of theory. This should be confirmed, not
+assumed, before Phase 3 (CCSD(T) single-point energies) begins.
 
 ## Why this matters
 
